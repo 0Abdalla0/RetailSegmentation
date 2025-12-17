@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retail Customer Segmentation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Retail Customer Segmentation</h1>
+
+    <label>Annual Income</label>
+    <input id="annual_income" type="number">
+
+    <label>Wine Spending</label>
+    <input id="spend_wine" type="number">
+
+    <label>Meat Spending</label>
+    <input id="spend_meat" type="number">
+
+    <button onclick="predict()">Predict Segment</button>
+
+    <div id="result" class="result" style="display:none;"></div>
+
+    <div class="footer">
+        Retail Buyer Segmentation • Machine Learning Project
+    </div>
+</div>
+
+<script>
+async function predict() {
+    const response = await fetch("/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            annual_income: document.getElementById("annual_income").value,
+            spend_wine: document.getElementById("spend_wine").value,
+            spend_meat: document.getElementById("spend_meat").value
+        })
+    });
+
+    const data = await response.json();
+    const result = document.getElementById("result");
+    result.style.display = "block";
+
+    if (data.success) {
+        result.innerHTML =
+            "<b>Segment:</b> " + data.segment_name + "<br>" +
+            "<b>Recommended Action:</b> " + data.action;
+    } else {
+        result.innerText = "Error: " + data.error;
+    }
+}
+</script>
+
+</body>
+</html>

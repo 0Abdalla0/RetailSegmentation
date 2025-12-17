@@ -1,0 +1,120 @@
+/* ===============================
+   Global Theme
+================================ */
+
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #f4f6f9, #e9eef5);
+    color: #2c3e50;
+}
+
+/* ===============================
+   Main Container
+================================ */
+
+.container {
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   Headings
+================================ */
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #1f3a5f;
+}
+
+h3 {
+    margin-top: 30px;
+    color: #1f3a5f;
+}
+
+/* ===============================
+   Form Labels & Inputs
+================================ */
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 1px solid #ccd6e0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* ===============================
+   Button
+================================ */
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #3498db, #2c80b4);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.35);
+}
+
+/* ===============================
+   Result Box
+================================ */
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f0f7ff;
+    border-left: 6px solid #3498db;
+}
+
+.result b {
+    color: #2c3e50;
+}
+
+/* ===============================
+   Footer (optional)
+================================ */
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #7f8c8d;
+}
